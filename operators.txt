@@ -1,0 +1,35 @@
+1.It will print 0 because == operator is used to check if its left-hand side operand is equal to right-hand side operand. 
+Since 1 is not equal to 5, 
+so the condition became false and thus printed 0.
+
+2.The output of the above code is: 1 0
+
+Because first it store i,i++ in the form of stack.
+
+First execution is last in(first out) ie..
+
+1)print i value in (i++)
+
+then increment i to 1;
+
+2)secondly print incremented i value ie.i;
+
+3.The output will be 7,6,5.
+4. error
+5.1 == 1 is TRUE
+6.6
+7.4
+8.1 10 5
+9.8 9
+10.13
+11.0
+12.4
+13.error
+14.ffffffff
+   fffffff0
+15.14
+16.1
+17.12
+18.error
+19.error
+20.error
