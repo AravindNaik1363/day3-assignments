@@ -1,0 +1,64 @@
+example of segmentation fault:
+1.
+int main()
+{
+char *str;
+
+/* Stored in read only part of data segment */
+str = "Qualcom";	
+
+/* Problem: trying to modify read only memory */
+*(str+1) = 'p';
+return 0;
+}
+****************************************************************
+2.
+// fault when array out of bound is accessed.
+#include <stdio.h>
+
+int main()
+{
+int arr[2];
+arr[3] = 10; // Accessing out of bound
+return 0;
+}
+****************************************************
+2. How to avoid structure padding?
+
+
+Ans:To avoid structure padding we can use pragma pack as well as an attribute.
+
+
+1. Using pragma pack:
+
+#include <stdio.h>
+#pragma pack(1)
+struct padding
+{
+short int s;	
+int i;
+char c;
+};
+
+int main()
+{
+	struct padding s;
+	printf("Size of s is: %ld\n", sizeof(s));
+}
+
+2. Using attribute:
+
+#include <stdio.h>
+struct s 
+{
+char ch;
+float f;
+char c;
+short int s;
+} __attribute__((packed));
+
+int main()
+{
+	struct s pack;
+	printf("Size of pack is: %ld\n", sizeof(pack));
+}
